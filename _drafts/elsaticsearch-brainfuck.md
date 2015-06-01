@@ -13,5 +13,20 @@ and need two write some simple it will be [brainfuck][brainfuck]! Brainfuck inte
 
 TODO: Script Module
 
+```json
+curl -XPOST localhost:9200/_search
+{   "size": 0,
+    "aggs": {
+        "test": {
+            "terms": {
+                "script": "++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.",
+                "lang" : "bf",
+                "params": {}
+            }
+        }
+    }
+}
+```
+
 [hw-plugin]: 
 [brainfuck-int]: http://peter-braun.org/2012/07/brainfuck-interpreter-in-40-lines-of-scala/
